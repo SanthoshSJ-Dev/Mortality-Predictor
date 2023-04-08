@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die</title>
+
+    <link rel="stylesheet" href="../static/main_style.css">
+    <link rel="shortcut icon" href="../static/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <audio id="background-sound" autoplay loop>
+        <source src="../static/sound.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="sound_btns" id="sound-toggle">
+
+        <img id="sound-on-image" src="../static/sound_on.png" alt="" width="40px" style="display: none;">
+        <img id="sound-off-image" src="../static/sound_off.png" alt="" width="40px">
+
+    </div>
+
+    <div class="landing_sec">
+        <nav>
+            <a class="title" href="#">
+                <h2>Death Predict</h2>
+            </a>
+
+            <a href="#" class="github_btn">
+                <img src="../static/github_logo.svg" alt="" width="20px">
+                <span>Get Repo</span>
+            </a>
+
+        </nav>
+
+        <div class="landing_main">
+            <div class="landing__left_sec">
+                <h1>Predict your death risk with our ML model.</h1>
+                <br>
+                <br>
+                <a id="form_btn" class="btn" href="#form_sec">Get in Buddy</a>
+            </div>
+
+            <div class="landing__right_sec">
+                <img src="../static/landing_main.png" alt="" width="80%">
+            </div>
+        </div>
+    </div>
+
+    <div class="form_sec" id="form_sec">
+        <h1>Get in touch</h1>
+        <form action="" method="post">
+
+            <div class="input_field_full">
+
+                <div class="form_part_1">
+                    <div class="sex inputs">
+                        <div class="sex_radio">
+                            <label class="label">Gender</label>
+                            <label class="radio-button">
+                                <input type="radio" name="sex" value="1">
+                                <span class="radio-design"></span>
+                                Male
+                            </label>
+                            <label class="radio-button">
+                                <input type="radio" name="sex" value="2">
+                                <span class="radio-design"></span>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="high_q">
+                        <h5>Select your highest Qualification</h5>
+                        <select name="highest_qualification" id="dropdown-select">
+                            <option value="0">Not Educated</option>
+                            <option value="1">5 Year Schooling</option>
+                            <option value="2">Completed Lower Schooling (SSLC)</option>
+                            <option value="3">Completed High School (HSC)</option>
+                            <option value="4">Diploma</option>
+                            <option value="5">Under Graduated</doption>
+                            <option value="6">Second Under Graduated</option>
+                            <option value="7">Post Graduated</option>
+                            <option value="8">Doctorate</option>
+                            <option value="9">Post Ph.D</option>
+                        </select>
+                    </div>
+
+                    <div class="rural inputs">
+                        <div class="rural_radio">
+                            <label class="label">Are you living in Rural Area?</label>
+                            <div class="rural_selection">
+                                <label class="radio-button">
+                                    <input type="radio" name="rural" value="1">
+                                    <span class="radio-design"></span>
+                                    Yes
+                                </label>
+                                <label class="radio-button">
+                                    <input type="radio" name="rural" value="0">
+                                    <span class="radio-design"></span>
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="disability">
+                        <h5>Select your Disability Levek</h5>
+                        <select name="disability_status" id="dropdown-select">
+                            <option value="0">No disability</option>
+                            <option value="1">Mild disability</option>
+                            <option value="2">Mild to moderate disability</option>
+                            <option value="3">Moderate disability</option>
+                            <option value="4">Moderate to severe disability</option>
+                            <option value="5">Severe disability</option>
+                            <option value="6">Severe to profound disability</option>
+                            <option value="7">Profound disability</option>
+                        </select>
+                    </div>
+
+
+                    <div class="water inputs">
+                        <div class="rural_radio">
+                            <label class="label">Did you have Water Purifier at your Home?</label>
+                            <div class="rural_selection">
+                                <label class="radio-button">
+                                    <input type="radio" name="is_water_filter" value="1">
+                                    <span class="radio-design"></span>
+                                    Yes
+                                </label>
+                                <label class="radio-button">
+                                    <input type="radio" name="is_water_filter" value="2">
+                                    <span class="radio-design"></span>
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form_part_2">
+
+                    <div class="chew-slider">
+                        <label class="label">Select your Chew Cosumtion level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="7" value="0" class="slider" id="chew" name="chew">
+                            <div class="chew-value" id="chewValue">0</div>
+                        </div>
+                    </div>
+
+
+                    <div class="chew-slider">
+                        <label class="label">Select your Smoking level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="4" value="0" class="slider" id="smoke" name="smoke">
+                            <div class="smoke-value" id="smokeValue">0</div>
+                        </div>
+                    </div>
+
+
+                    <div class="chew-slider">
+                        <label class="label">Select your Alcholol level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="4" value="0" class="slider" id="alcohol" name="alcohol">
+                            <div class="smoke-value" id="alcoholValue">0</div>
+                        </div>
+                    </div>
+
+                    <div class="chew-slider">
+                        <label class="label">Select your treatment level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="99" value="0" class="slider" id="treatment"
+                                name="treatment_source">
+                            <div class="smoke-value" id="treatmentValue">0</div>
+                        </div>
+                    </div>
+
+                    <button class="btn_submit" name="operation">Let's Rock</button>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="result">
+                <h3>Predicted Age</h3>
+                <h3>:</h3>
+                <h3>{{ result }}</h3>
+            </div>
+
+        </form>
+
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <h1 href="#">Developers</h1>
+    </div>
+
+    <style>
+
+        hr {
+            border: 1px solid cornflowerblue;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer h1 {
+            position: absolute;
+            font-size: 20px;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer h1 {
+            padding-top: 20px;
+
+        }
+    </style>
+
+
+    <script src="../static/main_script.js"></script>
+
+</body>
+
+</html>

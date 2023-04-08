@@ -5,20 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Die</title>
+    <title>Death Predictor</title>
 
-    <link rel="stylesheet" href="../static/main_styles.css">
+    <link rel="stylesheet" href="../static/main_style.css">
     <link rel="shortcut icon" href="../static/favicon.png" type="image/x-icon">
 </head>
 
 <body>
+
+    <audio id="background-sound" autoplay loop>
+        <source src="../static/sound.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="sound_btns" id="sound-toggle">
+
+        <img id="sound-on-image" src="../static/sound_on.png" alt="" width="40px" style="display: none;">
+        <img id="sound-off-image" src="../static/sound_off.png" alt="" width="40px">
+
+    </div>
+
     <div class="landing_sec">
         <nav>
-            <a class="btn" href="#">
+            <a class="title" href="#">
                 <h2>Death Predict</h2>
             </a>
-        </nav>
 
+            <a target="_blank" href="https://github.com/Mohammed-Rahman-sherif/Mortality-Predictor" class="github_btn">
+                <img src="../static/github_logo.svg" alt="" width="20px">
+                <span>Get Repo</span>
+            </a>
+
+        </nav>
         <div class="landing_main">
             <div class="landing__left_sec">
                 <h1>Predict your death risk with our ML model.</h1>
