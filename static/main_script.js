@@ -38,21 +38,24 @@ treatmentSlider.addEventListener("input", () => {
 });
 
 
-const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+const backgroundSound = document.getElementById('background-sound');
+const soundToggle = document.getElementById('sound-toggle');
 
-  const inputs = form.querySelectorAll('input[type="radio"], select, input[type="range"]');
-  let total = 0;
+const soundOnImage = document.getElementById('sound-on-image');
+const soundOffImage = document.getElementById('sound-off-image');
 
-  inputs.forEach((input) => {
-    if (input.checked || input.tagName === 'SELECT') {
-      total += parseInt(input.value, 10);
-    } else if (input.tagName === 'INPUT') {
-      total += parseInt(input.value, 10) * 5;
-    }
-  });
+soundOffImage.style.display = 'inline';
 
-  console.log(`Total value: ${total}`);
-  // Send the total value to the server using fetch or XMLHttpRequest.
+soundToggle.addEventListener('click', function() {
+  if (backgroundSound.paused) {
+    backgroundSound.play();
+    soundOnImage.style.display = 'inline';
+    soundOffImage.style.display = 'none';
+  } else {
+    backgroundSound.pause();
+    soundOnImage.style.display = 'none';
+    soundOffImage.style.display = 'inline';
+  }
 });
+
+
