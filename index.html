@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>FastAPI Prediction</h1>
+    <form id="predictionForm">
+        <label for="a">Data 1:</label>
+        <input type="number" id="a" name="a" step="0.01" required><br>
+        <label for="b">Data 2:</label>
+        <input type="number" id="b" name="b" step="0.01" required><br>
+        <label for="c">Data 3:</label>
+        <input type="number" id="c" name="c" step="1" required><br>
+        <label for="d">Data 4:</label>
+        <input type="number" id="d" name="d" step="0.01" required><br>
+        <label for="e">Data 5:</label>
+        <input type="number" id="e" name="e" step="0.01" required><br>
+        <label for="f">Data 6:</label>
+        <input type="number" id="f" name="f" step="0.01" required><br>
+        <label for="g">Data 7:</label>
+        <input type="number" id="g" name="g" step="0.01" required><br>
+        <label for="h">Data 8:</label>
+        <input type="number" id="h" name="h" step="0.01" required><br>
+        <label for="i">Data 9:</label>
+        <input type="number" id="i" name="i" step="0.01" required><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    <script>
+        $("#predictionForm").on("submit", function(event) {
+            event.preventDefault();
+            var formData = {
+                "a": $("#a").val(),
+                "b": $("#b").val(),
+                "c": $("#c").val(),
+                "d": $("#d").val(),
+                "e": $("#e").val(),
+                "f": $("#f").val(),
+                "g": $("#g").val(),
+                "h": $("#h").val(),
+                "i": $("#i").val()
+            };
+            $.post("/predict", formData, function(response) {
+                alert("Prediction: " + response.prediction);
+            });
+        });
+    </script>
+</body>
+</html>
