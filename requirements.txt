@@ -1,7 +1,7 @@
 tensorflow==2.3.0
 pandas==1.1.5
 scikit-learn==1.2.2
-numpy==1.19.3
+numpy==1.19.0
 anyio==3.6.2
 click==8.1.3
 fastapi==0.83.0
