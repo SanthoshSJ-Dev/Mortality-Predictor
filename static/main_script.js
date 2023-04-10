@@ -28,14 +28,14 @@ alcoholSlider.addEventListener("input", () => {
 });
 
 
-// const treatmentSlider = document.getElementById("treatment");
-// const treatmentValue = document.getElementById("treatmentValue");
+const treatmentSlider = document.getElementById("treatment");
+const treatmentValue = document.getElementById("treatmentValue");
 
-// treatmentValue.textContent = treatmentSlider.value;
+treatmentValue.textContent = treatmentSlider.value;
 
-// treatmentSlider.addEventListener("input", () => {
-//   treatmentValue.textContent = treatmentSlider.value;
-// });
+treatmentSlider.addEventListener("input", () => {
+  treatmentValue.textContent = treatmentSlider.value;
+});
 
 
 const backgroundSound = document.getElementById('background-sound');
