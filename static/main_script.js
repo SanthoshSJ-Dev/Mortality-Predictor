@@ -28,7 +28,7 @@ alcoholSlider.addEventListener("input", () => {
 });
 
 
-const treatmentSlider = document.getElementById("treatment");
+const treatmentSlider = document.getElementById("treatment_source");
 const treatmentValue = document.getElementById("treatmentValue");
 
 treatmentValue.textContent = treatmentSlider.value;
