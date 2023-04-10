@@ -8,36 +8,41 @@
     <title>Death Predictor</title>
 
     <link rel="stylesheet" href="../static/main_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="shortcut icon" href="../static/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-
+<!-- 
     <audio id="background-sound" autoplay loop>
         <source src="../static/sound.mp3" type="audio/mp3">
     </audio>
 
     <div class="sound_btns" id="sound-toggle">
 
-        <img id="sound-on-image" src="../static/sound_on.png" alt="" width="40px" style="display: none;">
-        <img id="sound-off-image" src="../static/sound_off.png" alt="" width="40px">
+        <img id="sound-on-image" src="../static/sound_on.png" alt="" width="30px" style="display: none;">
+        <img id="sound-off-image" src="../static/sound_off.png" alt="" width="30px"> 
 
-    </div>
+    </div> -->
 
     <div class="landing_sec">
         <nav>
             <a class="title" href="#">
-                <h2>Death Predict</h2>
+                <h2>Death Predictor</h2>
             </a>
 
-            <a target="_blank" href="https://github.com/Mohammed-Rahman-sherif/Mortality-Predictor" class="github_btn">
+            <a href="https://github.com/Mohammed-Rahman-sherif/Mortality-Predictor" class="github_btn">
                 <img src="../static/github_logo.svg" alt="" width="20px">
                 <span>Source Code</span>
             </a>
 
         </nav>
+
         <div class="landing_main">
-            <div class="landing__left_sec">
+            <div class="landing__left_sec" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <h1>Predict your death risk with our ML model.</h1>
                 <br>
                 <br>
@@ -50,132 +55,202 @@
         </div>
     </div>
 
-    <div class="form_sec" id="form_sec">
-        <h1>Get in touch</h1>
-        <form action="/predict" method="post">
+    <div class="form_sec" id="form_sec" data-aos="fade-up">
+        <h1>Say Truth! 😁</h1>
+        <form action="" method="post">
 
-            <div class="sex inputs">
-                <div class="sex_radio">
-                    <label class="label">Gender</label>
-                    <label class="radio-button">
-                        <input type="radio" name="sex" value="1" required>
-                        <span class="radio-design"></span>
-                        Male
-                    </label>
-                    <label class="radio-button">
-                        <input type="radio" name="sex" value="2" required>
-                        <span class="radio-design"></span>
-                        Female
-                    </label>
-                </div>
-            </div>
+            <div class="form_full">
 
-            <div class="high_q">
-                <h5>Select your highest Qualification</h5>
-                <select name="highest_qualification" id="dropdown-select" required>
-                    <option value="0">Not Educated</option>
-                    <option value="1">5 Year Schooling</option>
-                    <option value="2">Completed Lower Schooling (SSLC)</option>
-                    <option value="3">Completed High School (HSC)</option>
-                    <option value="4">Diploma</option>
-                    <option value="5">Under Graduated</doption>
-                    <option value="6">Second Under Graduated</option>
-                    <option value="7">Post Graduated</option>
-                    <option value="8">Doctorate</option>
-                    <option value="9">Post Ph.D</option>
-                </select>
-            </div>
+                <div class="form_part_1">
 
-            <div class="rural inputs">
-                <div class="rural_radio">
-                    <label class="label">Are you living in Rural Area?</label>
-                    <div class="rural_selection">
-                        <label class="radio-button">
-                            <input type="radio" name="rural" value="1" required>
-                            <span class="radio-design"></span>
-                            Yes
-                        </label>
-                        <label class="radio-button">
-                            <input type="radio" name="rural" value="2" required>
-                            <span class="radio-design"></span>
-                            No
-                        </label>
+                    <div class="sex inputs">
+                        <div class="sex_radio">
+                            <label class="label">Gender</label>
+                            <label class="radio-button">
+                                <input type="radio" name="sex" value="1">
+                                <span class="radio-design"></span>
+                                Male
+                            </label>
+                            <label class="radio-button">
+                                <input type="radio" name="sex" value="2">
+                                <span class="radio-design"></span>
+                                Female
+                            </label>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="disability">
-                <h5>Select your Disability Levek</h5>
-                <select name="disability_status" id="dropdown-select" required>
-                    <option value="0">No disability</option>
-                    <option value="1">Mild disability</option>
-                    <option value="2">Mild to moderate disability</option>
-                    <option value="3">Moderate disability</option>
-                    <option value="4">Moderate to severe disability</option>
-                    <option value="5">Severe disability</option>
-                    <option value="6">Severe to profound disability</option>
-                    <option value="7">Profound disability</option>
-                </select>
-            </div>
-
-
-            <div class="water inputs">
-                <div class="rural_radio">
-                    <label class="label">Did you have Water Purifier at your Home?</label>
-                    <div class="rural_selection">
-                        <label class="radio-button">
-                            <input type="radio" name="is_water_filter" value="1" required>
-                            <span class="radio-design"></span>
-                            Yes
-                        </label>
-                        <label class="radio-button">
-                            <input type="radio" name="is_water_filter" value="2" required>
-                            <span class="radio-design"></span>
-                            No
-                        </label>
+                    <div class="high_q">
+                        <h5>Select your highest Qualification</h5>
+                        <select name="highest_qualification" id="dropdown-select">
+                            <option value="0">Not Educated</option>
+                            <option value="1">5 Year Schooling</option>
+                            <option value="2">Completed Lower Schooling (SSLC)</option>
+                            <option value="3">Completed High School (HSC)</option>
+                            <option value="4">Diploma</option>
+                            <option value="5">Under Graduated</doption>
+                            <option value="6">Second Under Graduated</option>
+                            <option value="7">Post Graduated</option>
+                            <option value="8">Doctorate</option>
+                            <option value="9">Post Ph.D</option>
+                        </select>
                     </div>
+
+                    <div class="rural inputs">
+                        <div class="rural_radio">
+                            <label class="label">Are you living in Rural Area?</label>
+                            <div class="rural_selection">
+                                <label class="radio-button">
+                                    <input type="radio" name="rural" value="1">
+                                    <span class="radio-design"></span>
+                                    Yes
+                                </label>
+                                <label class="radio-button">
+                                    <input type="radio" name="rural" value="0">
+                                    <span class="radio-design"></span>
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="disability">
+                        <h5>Select your Disability Level</h5>
+                        <select name="disability_status" id="dropdown-select">
+                            <option value="0">No disability</option>
+                            <option value="1">Mild disability</option>
+                            <option value="2">Mild to moderate disability</option>
+                            <option value="3">Moderate disability</option>
+                            <option value="4">Moderate to severe disability</option>
+                            <option value="5">Severe disability</option>
+                            <option value="6">Severe to profound disability</option>
+                            <option value="7">Profound disability</option>
+                        </select>
+                    </div>
+
                 </div>
+
+                <div class="form_part_2">
+
+                    <div class="water inputs">
+                        <div class="rural_radio">
+                            <label class="label">Did you have Water Purifier at your Home?</label>
+                            <div class="rural_selection">
+                                <label class="radio-button">
+                                    <input type="radio" name="is_water_filter" value="1">
+                                    <span class="radio-design"></span>
+                                    Yes
+                                </label>
+                                <label class="radio-button">
+                                    <input type="radio" name="is_water_filter" value="2">
+                                    <span class="radio-design"></span>
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chew-slider">
+                        <label class="label">Select your Tobacco Cosumtion level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="7" value="0" class="slider" id="chew" name="chew">
+                            <div class="chew-value" id="chewValue">0</div>
+                        </div>
+                    </div>
+
+
+                    <div class="chew-slider">
+                        <label class="label">Select your Smoking level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="4" value="0" class="slider" id="smoke" name="smoke">
+                            <div class="smoke-value" id="smokeValue">0</div>
+                        </div>
+                    </div>
+
+
+                    <div class="chew-slider">
+                        <label class="label">Select your Alcholol level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="4" value="0" class="slider" id="alcohol" name="alcohol">
+                            <div class="smoke-value" id="alcoholValue">0</div>
+                        </div>
+                    </div>
+
+                    <div class="chew-slider">
+                        <label class="label">Select your treatment level</label>
+                        <div class="range-slider">
+                            <input type="range" min="0" max="9" value="0" class="slider"id="treatment_source" name="treatment_source">
+                            <div class="smoke-value" id="treatmentValue">0</div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="chew-slider">
-                <label class="label">Select your Chew Cosumtion level</label>
-                <div class="range-slider">
-                    <input type="range" min="0" max="7" value="0" class="slider" id="chew" name="chew" required>
-                    <div class="chew-value" id="chewValue">0</div>
-                </div>
-            </div>
+            <button class="btn_submit" name="operation">Predict your age of Death</button>
 
+            <!-- <br><br>
 
-            <div class="chew-slider">
-                <label class="label">Select your Smoking level</label>
-                <div class="range-slider">
-                    <input type="range" min="0" max="4" value="0" class="slider" id="smoke" name="smoke" required>
-                    <div class="smoke-value" id="smokeValue">0</div>
-                </div>
-            </div>
+            <div class="result">
+                <h3>Predicted Age</h3>
+                <h3>:</h3>
+                <h3>{{ result }}</h3>
+            </div> -->
 
-
-            <div class="chew-slider">
-                <label class="label">Select your Alcholol level</label>
-                <div class="range-slider">
-                    <input type="range" min="0" max="4" value="0" class="slider" id="alcohol" name="alcohol" required>
-                    <div class="smoke-value" id="alcoholValue">0</div>
-                </div>
-            </div>
-
-
-            <label for="treatment_source">Rate your Past Treatments:</label>
-            <input class="input-field" type="text" id="treatment_source" name="treatment_source" required><br><br>
-
-
-            <button class="btn_submit" type="submit" name="operation" value="download_video">Predict you Age of
-                Death</button>
         </form>
-
 
     </div>
 
+    <div class="footer" data-aos="fade-up">
+        <h1 href="#">Developers</h1>
+
+        <div class="cards">
+
+            <div class="profile">
+
+                <img src="../static/sharif.jpg" alt="">
+
+                <h3>Mohammed Rahman Sherif KM</h3>
+
+                <p>AI Developer | R&D</p>
+
+                <div class="social_icons">
+                    <a target="_blank" href="https://instagram.com/smart_sherif_?igshid=ZDdkNTZiNTM="><i class="fa-brands fa-instagram icon"></i></a>
+                    <a target="_blank" href="https://github.com/Mohammed-Rahman-sherif"><i class="fa-brands fa-github icon"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/mohammed-rahman-sherif"><i class="fa-brands fa-linkedin-in icon"></i></a>
+                    <a target="_blank" href="https://twitter.com/SmartSherif?t=ZK4ecConBpwAEDVXoWJn_g&s=09"><i class="fa-brands fa-twitter icon"></i></a>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="../static/santhosh.png" alt="">
+                <h3>Santhosh S</h3>
+                <p>UI / UX Designer | Web Developer</p>
+                <div class="social_icons">
+                    <a target="_blank" href="https://www.instagram.com/sandy___sj/"><i class="fa-brands fa-instagram icon"></i></a>
+                    <a target="_blank" href="https://github.com/SanthoshSJ-Dev"><i class="fa-brands fa-github icon"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/santhoshsj/"><i class="fa-brands fa-linkedin-in icon"></i></a>
+                    <a target="_blank" href="https://twitter.com/sandy___sj"><i class="fa-brands fa-twitter icon"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <p>Maintained by <b>Black Hats 🎓</b></p>
+
+    </footer>
+
+    
+
     <script src="../static/main_script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
 </body>
 
 </html>
