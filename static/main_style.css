@@ -364,7 +364,7 @@ option {
     }
 
     .form_sec {
-        padding-top: 100px;
+        padding: 100px 20px 100px 20px;
     }
 
     .form_sec h1 {
@@ -404,6 +404,11 @@ option {
         padding: 10px 60px;
     }
 
+    .profile {
+        width: none;
+        height: none;
+        padding: 20px;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -531,7 +536,6 @@ option {
     flex-wrap: wrap;
 }
 
-
 .cards img {
     border-radius: 100px;
     width: 150px;
@@ -540,8 +544,8 @@ option {
 }
 
 .profile {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 10px;
     background-color: var(--color-500);
     display: flex;
