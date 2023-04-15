@@ -11,32 +11,42 @@ templates = Jinja2Templates(directory="templates/")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
-def home(request: Request):
+async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/predict")
-def calculate(request: Request, operation: str = Form(...), sex: float = Form(...), highest_qualification: float = Form(...), rural: int = Form(...), disability_status: float = Form(...), is_water_filter: float = Form(...), chew: float = Form(...), smoke: float = Form(...), alcohol: float = Form(...), treatment_source: float = Form(...)):
-    #arr = np.array([[sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source]])
-    print(sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source)
+async def predict(request: Request,
+                  treatmentValue: float = Form(...),
+                  operation: str = Form(...),
+                  sex: float = Form(...),
+                  highest_qualification: float = Form(...),
+                  rural: int = Form(...),
+                  disability_status: float = Form(...),
+                  is_water_filter: float = Form(...),
+                  chew: float = Form(...),
+                  smoke: float = Form(...),
+                  alcohol: float = Form(...)):
+    
+    if operation:
+        print(sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatmentValue)
 
-    new_data = pd.DataFrame({
-        'sex': [sex],  # Example input values
-        'highest_qualification': [highest_qualification],
-        'rural': [rural],
-        'disability_status': [disability_status],
-        'is_water_filter': [is_water_filter],
-        'chew': [chew],
-        'smoke': [smoke],
-        'alcohol': [alcohol],
-        'treatment_source': [treatment_source]
-    })
+        new_data = pd.DataFrame({
+            'sex': [sex],
+            'highest_qualification': [highest_qualification],
+            'rural': [rural],
+            'disability_status': [disability_status],
+            'is_water_filter': [is_water_filter],
+            'chew': [chew],
+            'smoke': [smoke],
+            'alcohol': [alcohol],
+            'treatment_source': [treatmentValue]
+        })
 
-    pred = model.predict(new_data)
-    print(pred)
+        pred = model.predict(new_data)
+        print(pred)
 
-    # Convert pred to a native Python data type
-    #pred = float(pred[0][0])  # Assuming pred is a single scalar value
+        # Convert pred to a native Python data type
+        #pred = float(pred[0][0])  # Assuming pred is a single scalar value
 
-    # Pass pred as a dictionary to the Jinja2 template
-    return templates.TemplateResponse("result.html", {"request": request, "result": int(pred)})
-
+        # Pass pred as a dictionary to the Jinja2 template
+        return templates.TemplateResponse("result.html", {"request": request, "result": int(pred)})
