@@ -27,19 +27,19 @@ async def predict(request: Request,
                   alcohol: float = Form(...),
                   treatment_source: float = Form(...)):
     
-    if operation:
-        print(sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source)
+    if operation=="result":
+        print(operation, sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source)
 
         new_data = pd.DataFrame({
-            'sex': [1],
-            'highest_qualification': [1],
-            'rural': [1],
-            'disability_status': [1],
-            'is_water_filter': [1],
-            'chew': [1],
-            'smoke': [1],
-            'alcohol': [1],
-            'treatment_source': [1]
+            'sex': [sex],
+            'highest_qualification': [highest_qualification],
+            'rural': [rural],
+            'disability_status': [disability_status],
+            'is_water_filter': [is_water_filter],
+            'chew': [chew],
+            'smoke': [smoke],
+            'alcohol': [alcohol],
+            'treatment_source': [treatment_source]
         })
 
         pred = model.predict(new_data)
