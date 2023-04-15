@@ -15,9 +15,9 @@ def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/predict")
-def calculate(request: Request, operation: str = Form(...), sex: float = Form(...), highest_qualification: float = Form(...), rural: int = Form(...), disability_status: float = Form(...), is_water_filter: float = Form(...), chew: float = Form(...), smoke: float = Form(...), alcohol: float = Form(...), treatment_source: float = Form(...)):
+def calculate(request: Request, operation: str = Form(...), sex: float = Form(...), highest_qualification: float = Form(...), rural: int = Form(...), disability_status: float = Form(...), is_water_filter: float = Form(...), chew: float = Form(...), smoke: float = Form(...), alcohol: float = Form(...), t_source: float = Form(...)):
     #arr = np.array([[sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source]])
-    print(sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source)
+    print(sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, t_source)
 
     new_data = pd.DataFrame({
         'sex': [sex],  # Example input values
@@ -28,7 +28,7 @@ def calculate(request: Request, operation: str = Form(...), sex: float = Form(..
         'chew': [chew],
         'smoke': [smoke],
         'alcohol': [alcohol],
-        'treatment_source': [treatment_source]
+        'treatment_source': [t_source]
     })
 
     pred = model.predict(new_data)
