@@ -67,12 +67,12 @@
                         <div class="sex_radio">
                             <label class="label">Gender</label>
                             <label class="radio-button">
-                                <input type="radio" name="sex" value="1">
+                                <input type="radio" name="sex" value="1" required>
                                 <span class="radio-design"></span>
                                 Male
                             </label>
                             <label class="radio-button">
-                                <input type="radio" name="sex" value="2">
+                                <input type="radio" name="sex" value="2" required>
                                 <span class="radio-design"></span>
                                 Female
                             </label>
@@ -81,7 +81,8 @@
 
                     <div class="high_q">
                         <h5>Select your highest Qualification</h5>
-                        <select name="highest_qualification" id="dropdown-select">
+                        <select name="highest_qualification" id="dropdown-select" required>
+                            <option value="">--Please select your Education level--</option>
                             <option value="0">Not Educated</option>
                             <option value="1">5 Year Schooling</option>
                             <option value="2">Completed Lower Schooling (SSLC)</option>
@@ -100,12 +101,12 @@
                             <label class="label">Are you living in Rural Area?</label>
                             <div class="rural_selection">
                                 <label class="radio-button">
-                                    <input type="radio" name="rural" value="1">
+                                    <input type="radio" name="rural" value="1" required>
                                     <span class="radio-design"></span>
                                     Yes
                                 </label>
                                 <label class="radio-button">
-                                    <input type="radio" name="rural" value="0">
+                                    <input type="radio" name="rural" value="0" required>
                                     <span class="radio-design"></span>
                                     No
                                 </label>
@@ -115,7 +116,8 @@
 
                     <div class="disability">
                         <h5>Select your Disability Level</h5>
-                        <select name="disability_status" id="dropdown-select">
+                        <select name="disability_status" id="dropdown-select" required>
+                            <option value="">--Please select your Disability Level--</option>
                             <option value="0">No disability</option>
                             <option value="1">Mild disability</option>
                             <option value="2">Mild to moderate disability</option>
@@ -130,18 +132,17 @@
                 </div>
 
                 <div class="form_part_2">
-
                     <div class="water inputs">
                         <div class="rural_radio">
                             <label class="label">Did you have Water Purifier at your Home?</label>
                             <div class="rural_selection">
                                 <label class="radio-button">
-                                    <input type="radio" name="is_water_filter" value="1">
+                                    <input type="radio" name="is_water_filter" value="1" required>
                                     <span class="radio-design"></span>
                                     Yes
                                 </label>
                                 <label class="radio-button">
-                                    <input type="radio" name="is_water_filter" value="2">
+                                    <input type="radio" name="is_water_filter" value="2" required>
                                     <span class="radio-design"></span>
                                     No
                                 </label>
@@ -150,18 +151,18 @@
                     </div>
 
                     <div class="chew-slider">
-                        <label class="label">Select your Tobacco Cosumtion level</label>
+                        <label class="label">Select your Tobacco Consumption level</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="7" value="0" class="slider" id="chew" name="chew">
+                            <input type="range" min="0" max="7" value="0" class="slider" id="chew" name="chew" required>
                             <div class="chew-value" id="chewValue">0</div>
                         </div>
                     </div>
 
 
-                    <div class="smoke-slider">
-                        <label class="label">Select your Smoking level</label>
+                    <div class="chew-slider">
+                        <label for="smoke" class="label">Select your Smoking level</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="4" value="0" class="slider" id="smoke" name="smoke">
+                            <input type="range" min="0" max="4" value="0" class="slider" id="smoke" name="smoke" required>
                             <div class="smoke-value" id="smokeValue">0</div>
                         </div>
                     </div>
@@ -170,18 +171,20 @@
                     <div class="chew-slider">
                         <label class="label">Select your Alcholol level</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="4" value="0" class="slider" id="alcohol" name="alcohol">
-                            <div class="alcohol-value" id="alcoholValue">0</div>
+                            <input type="range" min="0" max="4" value="0" class="slider" id="alcohol" name="alcohol" required>
+                            <div class="smoke-value" id="alcoholValue">0</div>
                         </div>
                     </div>
 
-                    <div class="t-slider">
+                    <input type="text" name="treatment_source" required style="background-color: black;">
+
+                    <!-- <div class="chew-slider">
                         <label class="label">Select your treatment level</label>
                         <div class="range-slider">
-                            <input type="range" min="0" max="9" value="0" class="slider"id="treatmentValue" name="treatmentValue">
-                            <div class="t-value" id="treatmentValue">0</div>
+                            <input type="range" min="0" max="9" value="0" class="slider" id="treatment_source" name="treatment_source">
+                            <div class="smoke-value" id="treatmentValue">0</div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
