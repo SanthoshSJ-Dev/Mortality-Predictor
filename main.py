@@ -16,7 +16,6 @@ async def home(request: Request):
 
 @app.post("/predict")
 async def predict(request: Request,
-                  treatmentValue: float = Form(...),
                   operation: str = Form(...),
                   sex: float = Form(...),
                   highest_qualification: float = Form(...),
@@ -25,10 +24,11 @@ async def predict(request: Request,
                   is_water_filter: float = Form(...),
                   chew: float = Form(...),
                   smoke: float = Form(...),
-                  alcohol: float = Form(...)):
+                  alcohol: float = Form(...),
+                  treatment_source: float = Form(...)):
     
-    if operation:
-        print(sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatmentValue)
+    if operation=="result":
+        print(operation, sex, highest_qualification, rural, disability_status, is_water_filter, chew, smoke, alcohol, treatment_source)
 
         new_data = pd.DataFrame({
             'sex': [sex],
@@ -39,7 +39,7 @@ async def predict(request: Request,
             'chew': [chew],
             'smoke': [smoke],
             'alcohol': [alcohol],
-            'treatment_source': [treatmentValue]
+            'treatment_source': [treatment_source]
         })
 
         pred = model.predict(new_data)
